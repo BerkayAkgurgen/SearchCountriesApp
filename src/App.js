@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/header/Navbar";
+import Hero from "./components/hero/Hero";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,6 +14,7 @@ export function App() {
     <div className="app">
       <Router>
         <Navbar />
+        <Hero />
       </Router>
     </div>
   );
