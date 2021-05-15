@@ -1,18 +1,32 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 
 const MobileMenu = React.lazy(() => import("./MobileMenu"));
 
 const Navbar = () => {
+  const navbarRef = useRef(null);
   const [active, setActive] = useState(false);
 
   const mobileToggle = () => {
     setActive(!active);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
+
+  const onScroll = (e) => {
+    if (window.scrollY === 0) {
+      navbarRef.current.className = "topbar";
+    } else {
+      navbarRef.current.className = "topbar scroll";
+    }
+  };
+
   return (
-    <div className="topbar">
+    <div ref={navbarRef} className="topbar">
       <div className="d-between container">
         <div className="topbar__desktop d-between">
           <div className="topbar__brand brand">
