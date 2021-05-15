@@ -7,7 +7,13 @@
 // RESPONSIVE BREAKPOINT FUNCTIONS
 
 @mixin breakpoint($point) {
-    @if $point==xlarge {
+    @if $point==xxlarge {
+        @media (min-width: rem(1500px)) {
+            @content ;
+        }
+    }
+    
+    @else if $point==xlarge {
         @media (min-width: rem(1200px)) {
             @content ;
         }
@@ -21,6 +27,12 @@
 
     @else if $point==medium {
         @media (min-width: rem(768px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==xsmedium {
+        @media (max-width: rem(767px)) and (min-width: rem(577px)) {
             @content ;
         }
     }

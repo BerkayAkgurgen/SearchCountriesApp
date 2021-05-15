@@ -48,3 +48,23 @@
         background-position: 630px 0;
     }
 }
+
+@keyframes lineAnimation {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 30%;
+    }
+}
+
+@keyframes lineAnimationForMobile {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 60%;
+    }
+}

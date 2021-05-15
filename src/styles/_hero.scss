@@ -1,0 +1,79 @@
+.hero {
+    margin-top: 64px;
+
+    &__bg-image {
+        width: 100vw;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+
+        @include breakpoint(xsmall) {
+            height: rem(350px);
+            padding-top: 15px;
+        }
+
+        @include breakpoint(small) {
+            height: rem(500px);
+            background-position: right;
+        }
+
+        @include breakpoint(xsmedium) {
+            padding-top: rem(45px);
+            padding-left: rem(20px);
+            padding-right: rem(20px);
+        }
+
+
+        @include breakpoint(xxlarge) {
+            height: rem(550px);
+        }
+
+        .hero__header {
+            position: relative;
+            color: #213970;
+            font-weight: $font-bold;
+            letter-spacing: 2px;
+            padding-bottom: rem(5px);
+
+            &::before {
+                @include pseudo();
+                background: $text-navy;
+                height: 3px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                bottom: 12px;
+                animation: lineAnimation 0.7s forwards ease-in;
+                @include breakpoint(xsmall) {
+                    bottom: 0;
+                    animation: lineAnimationForMobile 0.7s forwards ease-in;
+                }
+            }
+
+
+            @include breakpoint(small) {
+                padding-bottom: rem(15px);
+                font-size: rem(50px);
+            }
+
+            @include breakpoint(xsmedium) {
+                font-size: rem(35px);
+            }
+
+        }
+
+        .hero__context {
+            color: #213970;
+
+            @include breakpoint(small) {
+                font-size: rem(25px);
+            }
+
+            @include breakpoint(xsmedium) {
+                font-size: rem(20px);
+            }
+
+            line-height: 1.4;
+        }
+    }
+}
