@@ -32,19 +32,19 @@
     }
 
     @else if $point==xsmedium {
-        @media (max-width: rem(767px)) and (min-width: rem(577px)) {
+        @media (max-width: rem(767px)) and (min-width: rem(615px)) {
             @content ;
         }
     }
 
     @else if $point==small {
-        @media (min-width: rem(576px)) {
+        @media (min-width: rem(614px)) {
             @content ;
         }
     }
 
     @else if $point==xsmall {
-        @media (max-width: rem(575px)) {
+        @media (max-width: rem(613px)) {
             @content ;
         }
 
