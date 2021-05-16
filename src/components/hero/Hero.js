@@ -9,11 +9,13 @@ function Hero() {
         }}
         className="hero__bg-image"
       >
-        <h2 className="hero__header">SEARCH THE WORLD!</h2>
-        <p className="hero__context">
-          You can get the most up-to-date information about all countries around
-          the world.
-        </p>
+        <div className="context">
+          <h2 className="hero__header">SEARCH THE WORLD!</h2>
+          <p className="hero__context">
+            You can get the most up-to-date information about all countries
+            around the world.
+          </p>
+        </div>
       </div>
     </section>
   );

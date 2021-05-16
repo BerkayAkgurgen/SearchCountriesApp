@@ -34,6 +34,7 @@ const Navbar = () => {
               <LazyLoad height={50} once>
                 <img
                   width="50px"
+                  height="35px"
                   src="./src/images/favicon&icon/favicon.png"
                   alt="icon"
                 />
@@ -49,9 +50,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav__list-item">
-                <Link to="/" className="brand__link">
-                  Travel
-                </Link>
+                <a href="#form-section" className="brand__link">
+                  Go Search
+                </a>
               </li>
               <li className="nav__list-item">
                 <Link to="/" className="brand__link">
@@ -87,7 +88,7 @@ const Navbar = () => {
         </div>
         <>
           <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
-            <MobileMenu active={active} />
+            <MobileMenu active={active}  setActive={setActive}/>
           </Suspense>
         </>
       </div>
