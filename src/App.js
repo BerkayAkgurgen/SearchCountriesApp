@@ -8,6 +8,7 @@ import {
   useParams,
   useHistory,
 } from "react-router-dom";
+import FormSection from "./components/form/FormSection";
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
       <Router>
         <Navbar />
         <Hero />
+        <FormSection/>
       </Router>
     </div>
   );
