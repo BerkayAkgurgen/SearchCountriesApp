@@ -1,23 +1,37 @@
-import React from "react";
-import Navbar from "./components/header/Navbar";
-import Hero from "./components/hero/Hero";
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   useParams,
   useHistory,
+  Redirect,
 } from "react-router-dom";
-import FormSection from "./components/form/FormSection";
+
+const Navbar = React.lazy(() => import("./components/header/Navbar"));
+const Footer = React.lazy(() => import("./components/footer/Footer"));
+const ErrorPage = React.lazy(() => import("./components/error/ErrorPage"));
+const Home = React.lazy(() => import("./components/Home/Home"));
 
 export function App() {
   return (
-    <div className="app">
-      <Router>
-        <Navbar />
-        <Hero />
-        <FormSection/>
-      </Router>
-    </div>
+    <Router>
+      <div className="app">
+        <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+          <Navbar />
+        </Suspense>
+        <Switch>
+          <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+            <Route exact path="/" component={Home} />
+          </Suspense>
+          <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+            <Route component={ErrorPage} />
+          </Suspense>
+        </Switch>
+        <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+          <Footer />
+        </Suspense>
+      </div>
+    </Router>
   );
 }
