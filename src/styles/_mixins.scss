@@ -12,7 +12,7 @@
             @content ;
         }
     }
-    
+
     @else if $point==xlarge {
         @media (min-width: rem(1200px)) {
             @content ;
@@ -47,7 +47,17 @@
         @media (max-width: rem(613px)) {
             @content ;
         }
+    }
 
+    @else if $point==xxsmall {
+        @media (max-width: rem(612px)) and (min-width: rem(500px)) {
+            @content ;
+        }
+    }
+    @else if $point==footersmall {
+        @media (max-width: rem(612px)) and (min-width: rem(500px)) {
+            @content ;
+        }
     }
 }
 

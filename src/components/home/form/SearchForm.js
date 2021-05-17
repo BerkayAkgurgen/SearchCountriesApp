@@ -11,7 +11,11 @@ const SearchForm = () => {
           className="search__form-input"
           placeholder="e.g Turkey, Germany..."
         />
-        <button className="search__form-button">
+        <button
+          type="submit"
+          aria-label="search"
+          className="search__form-button"
+        >
           <BiSearchAlt />
         </button>
       </form>
@@ -21,7 +25,7 @@ const SearchForm = () => {
             Search by:
           </option>
           <option value="name">Name</option>
-          <option value="language">Language</option>
+          <option value="region">Region</option>
         </select>
       </div>
     </div>

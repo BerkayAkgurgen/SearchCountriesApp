@@ -36,11 +36,6 @@ const MobileMenu = ({ active, setActive }) => {
             </a>
           </li>
           <li className="mobile__list-item">
-            <Link to="/" className="menu-link">
-              Blog
-            </Link>
-          </li>
-          <li className="mobile__list-item">
             <Link
               to={{
                 pathname:

@@ -55,11 +55,6 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav__list-item">
-                <Link to="/" className="brand__link">
-                  Blog
-                </Link>
-              </li>
-              <li className="nav__list-item">
                 <Link
                   to={{
                     pathname:
@@ -88,7 +83,7 @@ const Navbar = () => {
         </div>
         <>
           <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
-            <MobileMenu active={active}  setActive={setActive}/>
+            <MobileMenu active={active} setActive={setActive} />
           </Suspense>
         </>
       </div>
