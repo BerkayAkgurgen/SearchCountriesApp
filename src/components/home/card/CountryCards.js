@@ -38,7 +38,7 @@ const CountryCards = () => {
                     <img
                       width={windowWidth >= 614 ? "320px" : "100%"}
                       height={windowWidth >= 614 ? "210px" : '100%"'}
-                      src="https://restcountries.eu/data/afg.svg"
+                      src="https://restcountries.eu/data/cpv.svg"
                       alt="flag"
                     />
                   </LazyLoad>
@@ -53,9 +53,11 @@ const CountryCards = () => {
                     <span className="country-region">Region: Lorem</span>
                   </div>
                 </div>
-                <footer className="card__footer">
-                  <a href="#!">Go to detailed information.</a>
-                </footer>
+                <a href="/country/cpv">
+                  <footer className="card__footer">
+                    <p>Go to detailed information.</p>
+                  </footer>
+                </a>
               </div>
             </div>
           </div>

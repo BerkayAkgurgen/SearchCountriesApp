@@ -35,7 +35,7 @@ const Navbar = () => {
                 <img
                   width="50px"
                   height="35px"
-                  src="./src/images/favicon&icon/favicon.png"
+                  src="/src/images/favicon&icon/favicon.png"
                   alt="icon"
                 />
               </LazyLoad>
