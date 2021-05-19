@@ -11,6 +11,7 @@ module.exports = {
     port: 3010,
     watchContentBase: true,
   },
+  entry: ["@babel/polyfill", "./src/index.js"],
   module: {
     rules: [
       {
