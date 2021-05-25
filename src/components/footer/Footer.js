@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { AiFillGithub, AiOutlineArrowUp, AiFillApi } from "react-icons/ai";
 import { ImLinkedin } from "react-icons/im";
+import { SearchContext } from "../../contextAPI/FormContext";
 
 function Footer() {
   return (
@@ -14,7 +15,10 @@ function Footer() {
             </a>
           </li>
           <li className="footer__list-item">
-            <a target="_blank" href="https://www.linkedin.com/in/berkay-akgurgen/">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/berkay-akgurgen/"
+            >
               <ImLinkedin />
               <span>Goes to Linkedin!</span>
             </a>

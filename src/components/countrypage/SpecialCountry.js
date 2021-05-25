@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   useParams,
-  useHistory,
   Redirect,
 } from "react-router-dom";
 import LazyLoad from "react-lazyload";
@@ -20,7 +19,7 @@ import ErrorPage from "../error/ErrorPage";
 const SpecialCountry = () => {
   const [country, setCountry] = useState([]);
   const [error, setError] = useState(false);
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -40,11 +39,9 @@ const SpecialCountry = () => {
       }, 300);
       setLoad(true);
     } catch (err) {
-      setError(false);
+      setError(true);
     }
   };
-
-  console.log(country);
 
   return (
     <>
