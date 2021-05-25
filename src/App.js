@@ -13,6 +13,7 @@ import Navbar from "./components/header/Navbar";
 import Home from "./components/Home/Home";
 import ErrorPage from "./components/error/ErrorPage";
 import Footer from "./components/footer/Footer";
+import { CountryProvider } from "./contextAPI/FormContext";
 
 // const Navbar = React.lazy(() => import("./components/header/Navbar"));
 // const Footer = React.lazy(() => import("./components/footer/Footer"));
@@ -21,30 +22,33 @@ import Footer from "./components/footer/Footer";
 
 export function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <LazyLoad>
-              <Home />
-            </LazyLoad>
-          </Route>
-          <LazyLoad>
+    <CountryProvider>
+      <Router>
+        <div className="app">
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <LazyLoad>
+                <Home />
+              </LazyLoad>
+            </Route>
             <Route exact path="/country/:id/">
-              <SpecialCountry />
+              <LazyLoad>
+                <SpecialCountry />
+              </LazyLoad>
             </Route>
-          </LazyLoad>
-          <LazyLoad>
             <Route>
-              <ErrorPage />
+              <LazyLoad>
+                <ErrorPage />
+                <Redirect to="/404" />
+              </LazyLoad>
             </Route>
+          </Switch>
+          <LazyLoad once>
+            <Footer />
           </LazyLoad>
-        </Switch>
-        <LazyLoad once>
-          <Footer />
-        </LazyLoad>
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </CountryProvider>
   );
 }
