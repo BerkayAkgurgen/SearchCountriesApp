@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import LazyLoad from "react-lazyload";
+import { MdFavorite } from "react-icons/md";
 import { SearchContext } from "../../../contextAPI/FormContext";
 
 const CountryCards = () => {
@@ -65,6 +66,10 @@ const CountryCards = () => {
                       <p>Go to detailed information.</p>
                     </footer>
                   </a>
+                  <div title="Add Favorite" className="favorite-btn add">
+                    <MdFavorite />
+                    <span>Add To Travel List</span>
+                  </div>
                 </div>
               );
             })

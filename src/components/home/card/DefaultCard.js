@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LazyLoad from "react-lazyload";
+import { MdFavorite } from "react-icons/md";
 import DefCountries from "../../../CountryJSON/DefCountries";
 
 const DefaultCard = () => {
@@ -18,7 +19,7 @@ const DefaultCard = () => {
     <main id="main" className="def__countries">
       <div className="container">
         <header className="def__header">
-        <h3 className="popular">Popular Countries</h3>
+          <h3 className="popular">Popular Countries</h3>
         </header>
         <div className="dp-cards">
           {DefCountries.map((country) => {
@@ -58,6 +59,10 @@ const DefaultCard = () => {
                     <p>Go to detailed information.</p>
                   </footer>
                 </a>
+                <div title="Add Favorite" className="favorite-btn add">
+                  <MdFavorite />
+                  <span>Add To Travel List</span>
+                </div>
               </div>
             );
           })}

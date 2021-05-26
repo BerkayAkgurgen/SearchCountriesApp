@@ -14,6 +14,7 @@ import Home from "./components/Home/Home";
 import ErrorPage from "./components/error/ErrorPage";
 import Footer from "./components/footer/Footer";
 import { CountryProvider } from "./contextAPI/FormContext";
+import FavoriteBar from "./components/sidebar/Favorite";
 
 // const Navbar = React.lazy(() => import("./components/header/Navbar"));
 // const Footer = React.lazy(() => import("./components/footer/Footer"));
@@ -44,6 +45,9 @@ export function App() {
               </LazyLoad>
             </Route>
           </Switch>
+          <LazyLoad once>
+            <FavoriteBar />
+          </LazyLoad>
           <LazyLoad once>
             <Footer />
           </LazyLoad>
