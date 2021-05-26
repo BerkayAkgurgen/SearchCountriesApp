@@ -38,6 +38,7 @@
 }
 
 .card {
+    position: relative;
     text-align: center;
     margin-bottom: rem(50px);
     width: 320px;
@@ -93,8 +94,6 @@
         padding: rem(15px) 0;
         background: $text-navy;
         cursor: pointer;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
 
         *:not(:hover) {
             transition: all .4s ease-in-out;
@@ -160,4 +159,61 @@
     text-align: center;
     color: $skyblue;
     font-size: rem(60px);
+}
+
+.def__header {
+    background-color: $skyblue;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-shadow: 0 -5px 25px -5px #1A237E;
+    margin-bottom: rem(50px);
+}
+
+.favorite-btn {
+    background-color: $text-navy;
+    font-size: rem(20px);
+    cursor: pointer;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 3px solid $skyblue;
+    padding: rem(10px) 0;
+
+    svg {
+        vertical-align: middle;
+    }
+
+    span {
+        padding-left: rem(5px);
+        font-size: rem(16px);
+    }
+
+    &:hover {
+        background-color: $skyblue;
+        transition: all .4s ease-in-out;
+    }
+
+    &:not(:hover) {
+        transition: all .4s ease-in-out;
+    }
+}
+
+.favorite-btn.added {
+    color: red !important;
+
+    &:hover {
+        color: white !important;
+    }
+}
+
+.favorite-btn.add {
+    color: white !important;
+
+    &:hover {
+        color: red !important;
+    }
 }

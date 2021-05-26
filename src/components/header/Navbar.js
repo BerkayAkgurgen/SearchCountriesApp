@@ -7,6 +7,27 @@ const MobileMenu = React.lazy(() => import("./MobileMenu"));
 const Navbar = () => {
   const navbarRef = useRef(null);
   const [active, setActive] = useState(false);
+  const [activeBar, setBar] = useState(true);
+
+  const sidebarHandler = () => {
+    setBar(!activeBar);
+    let sidebar = document.getElementById("sidebar");
+    let overlay = document.querySelector(".overlay");
+    if (activeBar) {
+      sidebar.classList.add("anim-bar");
+      overlay.classList.add("anim-overlay");
+      document.body.classList.add("body-close");
+    } else {
+      sidebar.classList.remove("anim-bar");
+      overlay.classList.remove("anim-overlay");
+      document.body.classList.remove("body-close");
+    }
+  };
+
+  const closeOverlay = () => {
+    setBar(false);
+    sidebarHandler()
+  };
 
   const mobileToggle = () => {
     setActive(!active);
@@ -55,6 +76,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav__list-item">
+                <a onClick={sidebarHandler} className="brand__link">
+                  Travel List
+                </a>
+              </li>
+              <li className="nav__list-item">
                 <Link
                   to={{
                     pathname:
@@ -87,6 +113,7 @@ const Navbar = () => {
           </Suspense>
         </>
       </div>
+      <div className="overlay" onClick={closeOverlay}></div>
     </div>
   );
 };

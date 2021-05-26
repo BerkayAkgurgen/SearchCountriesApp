@@ -46,14 +46,6 @@
     padding-bottom: rem(70px);
 }
 
-.def__header {
-    background-color: $skyblue;
-    margin-left: calc(-100vw / 2 + 500px / 2);
-    margin-right: calc(-100vw / 2 + 500px / 2);
-    box-shadow: 0 -5px 25px -5px #1A237E;
-    margin-bottom: rem(50px);
-}
-
 .popular {
     padding: 2rem 0px;
     position: relative;
@@ -63,4 +55,8 @@
     justify-content: center;
     font-size: 1.5625rem;
     color: $white;
+}
+
+.body-close {
+    overflow: hidden;
 }
