@@ -5,6 +5,8 @@ export const SearchContext = createContext();
 const SearchState = {
   countries: [],
   error: false,
+  favoriteCountries: [],
+  sidebarToggle: false,
 };
 
 const reducer = (state, action) => {
@@ -20,6 +22,16 @@ const reducer = (state, action) => {
         ...state,
         countries: [],
         error: true,
+      };
+    case "ADD_FAVORITE":
+      return {
+        ...state,
+        favoriteCountries: action.payload,
+      };
+    case "CHANGE_SIDEBAR_TOGGLE":
+      return {
+        ...state,
+        sidebarToggle: !state.sidebarToggle,
       };
   }
 };

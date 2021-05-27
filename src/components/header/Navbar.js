@@ -1,32 +1,27 @@
-import React, { useState, Suspense, useRef, useEffect } from "react";
+import React, {
+  useState,
+  Suspense,
+  useRef,
+  useEffect,
+  useContext,
+} from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
+import { SearchContext } from "../../contextAPI/FormContext";
 
 const MobileMenu = React.lazy(() => import("./MobileMenu"));
 
 const Navbar = () => {
+  const { state, dispatch } = useContext(SearchContext);
   const navbarRef = useRef(null);
   const [active, setActive] = useState(false);
-  const [activeBar, setBar] = useState(true);
 
   const sidebarHandler = () => {
-    setBar(!activeBar);
-    let sidebar = document.getElementById("sidebar");
-    let overlay = document.querySelector(".overlay");
-    if (activeBar) {
-      sidebar.classList.add("anim-bar");
-      overlay.classList.add("anim-overlay");
-      document.body.classList.add("body-close");
-    } else {
-      sidebar.classList.remove("anim-bar");
-      overlay.classList.remove("anim-overlay");
-      document.body.classList.remove("body-close");
-    }
+    dispatch({ type: "CHANGE_SIDEBAR_TOGGLE" });
   };
 
   const closeOverlay = () => {
-    setBar(false);
-    sidebarHandler()
+    dispatch({ type: "CHANGE_SIDEBAR_TOGGLE" });
   };
 
   const mobileToggle = () => {
@@ -113,7 +108,10 @@ const Navbar = () => {
           </Suspense>
         </>
       </div>
-      <div className="overlay" onClick={closeOverlay}></div>
+      <div
+        className={state.sidebarToggle ? "overlay anim-overlay" : "overlay"}
+        onClick={closeOverlay}
+      ></div>
     </div>
   );
 };
