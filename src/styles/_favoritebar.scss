@@ -48,6 +48,15 @@
 .favoritebar {
     padding: rem(30px) 0;
 
+    &__close {
+        position: absolute;
+        cursor: pointer;
+        top: -0.5rem;
+        right: 1rem;
+        font-size: rem(25px);
+        color: $text-navy;
+    }
+
     &__header {
         text-align: center;
         font-size: rem(20px);

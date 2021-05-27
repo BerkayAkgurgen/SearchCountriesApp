@@ -78,6 +78,7 @@
             padding: 0rem 0.7rem;
 
             .infos__list {
+                columns: 2;
                 @include breakpoint(small) {
                     display: flex;
                     white-space: nowrap;
