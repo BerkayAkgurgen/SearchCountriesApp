@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useContext,
 } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import { SearchContext } from "../../contextAPI/FormContext";
 import MobileMenu from "./MobileMenu";
@@ -101,7 +101,7 @@ const Navbar = () => {
           <span className="line-3"></span>
         </div>
         <>
-          <LazyLoad once>
+          <LazyLoad>
             <MobileMenu active={active} setActive={setActive} />
           </LazyLoad>
         </>

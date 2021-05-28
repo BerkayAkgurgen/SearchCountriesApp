@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from './hero/Hero"';
+import Hero from "./hero/Hero";
 import FormSection from "./form/FormSection";
 import CountryCards from "./card/CountryCards";
 import LazyLoad from "react-lazyload";
