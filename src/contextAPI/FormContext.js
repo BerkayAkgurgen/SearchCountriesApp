@@ -28,6 +28,11 @@ const reducer = (state, action) => {
         ...state,
         favoriteCountries: action.payload,
       };
+    case "REMOVE_FAVORITE":
+      return {
+        ...state,
+        favoriteCountries: action.payload,
+      };
     case "CHANGE_SIDEBAR_TOGGLE":
       return {
         ...state,
