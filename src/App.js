@@ -25,7 +25,7 @@ export function App() {
   return (
     <CountryProvider>
       <Router>
-        <div className="app">
+        <>
           <Navbar />
           <Switch>
             <Route exact path="/">
@@ -51,7 +51,7 @@ export function App() {
           <LazyLoad once>
             <Footer />
           </LazyLoad>
-        </div>
+        </>
       </Router>
     </CountryProvider>
   );
