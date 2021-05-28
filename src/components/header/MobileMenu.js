@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { useEffect, useContext } from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 import { SearchContext } from "../../contextAPI/FormContext";
 
 const MobileMenu = ({

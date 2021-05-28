@@ -1,15 +1,13 @@
 import React, {
   useState,
-  Suspense,
   useRef,
   useEffect,
   useContext,
 } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import { SearchContext } from "../../contextAPI/FormContext";
-
-const MobileMenu = React.lazy(() => import("./MobileMenu"));
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(SearchContext);
@@ -103,9 +101,9 @@ const Navbar = () => {
           <span className="line-3"></span>
         </div>
         <>
-          <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+          <LazyLoad once>
             <MobileMenu active={active} setActive={setActive} />
-          </Suspense>
+          </LazyLoad>
         </>
       </div>
       <div

@@ -59,7 +59,7 @@ const CountryCards = () => {
                       once
                     >
                       <img
-                        width={windowWidth >= 614 ? "320px" : "100%"}
+                        width={windowWidth >= 614 ? "310px" : "100%"}
                         height={windowWidth >= 614 ? "210px" : '100%"'}
                         src={country.flag}
                         alt="flag"

@@ -93,10 +93,12 @@
             &::before {
                 @include pseudo();
                 height: 3px;
+                width: 190px;
                 background-color: $text-navy;
                 bottom: -18px;
-                left: 0;
-                right: 0;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
             }
 
             &-name {

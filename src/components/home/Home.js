@@ -1,20 +1,21 @@
-import React, { Suspense } from "react";
-const Hero = React.lazy(() => import("./hero/Hero"));
-const FormSection = React.lazy(() => import("./form/FormSection"));
-const CountryCards = React.lazy(() => import("./card/CountryCards"));
+import React from "react";
+import Hero from './hero/Hero"';
+import FormSection from "./form/FormSection";
+import CountryCards from "./card/CountryCards";
+import LazyLoad from "react-lazyload";
 
 function Home() {
   return (
     <div className="Home">
-      <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+      <LazyLoad once>
         <Hero />
-      </Suspense>
-      <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+      </LazyLoad>
+      <LazyLoad once>
         <FormSection />
-      </Suspense>
-      <Suspense fallback={<div>Daha sonra tekrar deneyin.</div>}>
+      </LazyLoad>
+      <LazyLoad once>
         <CountryCards />
-      </Suspense>
+      </LazyLoad>
     </div>
   );
 }

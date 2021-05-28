@@ -14,6 +14,7 @@
 
     @include breakpoint(xsmall) {
         align-items: unset;
+        height: 80vh;
     }
 
     .container {

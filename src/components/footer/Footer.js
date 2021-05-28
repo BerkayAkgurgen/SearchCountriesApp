@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
-import { AiFillGithub, AiOutlineArrowUp, AiFillApi } from "react-icons/ai";
+import React from "react";
+import { AiFillGithub, AiFillApi } from "react-icons/ai";
 import { ImLinkedin } from "react-icons/im";
-import { SearchContext } from "../../contextAPI/FormContext";
 
 function Footer() {
   return (
