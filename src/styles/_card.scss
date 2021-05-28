@@ -182,6 +182,11 @@
     border-bottom-right-radius: 8px;
     border-top: 3px solid $skyblue;
     padding: rem(10px) 0;
+    color: white;
+
+    &:hover {
+        color: red;
+    }
 
     svg {
         vertical-align: middle;
@@ -204,16 +209,4 @@
 
 .favorite-btn.added {
     color: red !important;
-
-    &:hover {
-        color: white !important;
-    }
-}
-
-.favorite-btn.add {
-    color: white !important;
-
-    &:hover {
-        color: red !important;
-    }
 }

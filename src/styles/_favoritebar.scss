@@ -51,8 +51,8 @@
     &__close {
         position: absolute;
         cursor: pointer;
-        top: -0.5rem;
-        right: 1rem;
+        top: 0.7rem;
+        right: 1.3rem;
         font-size: rem(25px);
         color: $text-navy;
     }
@@ -76,14 +76,12 @@
         }
     }
 
-    :not(:first-child) {
-        margin-top: rem(25px);
-    }
-
     &__countries {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: rem(30px);
+        animation: removed-item 0.3s ease-in-out;
 
         .favority__country {
             position: relative;
@@ -139,4 +137,11 @@
 
         }
     }
+}
+
+.empty__list {
+    text-align: center;
+    font-size: rem(25px);
+    color: $text-navy;
+    padding-top: rem(30px);
 }

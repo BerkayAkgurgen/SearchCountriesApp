@@ -132,8 +132,18 @@
     from {
         transform: rotate(0deg);
     }
-    
+
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes removed-item {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
     }
 }
