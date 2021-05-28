@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import LazyLoad from "react-lazyload";
 import { MdFavorite } from "react-icons/md";
-import DefCountries from "../../../CountryJSON/DefCountries";
+import DefCountries from "../../../defcountryarray/DefCountries";
 import { SearchContext } from "../../../contextAPI/FormContext";
 
 const DefaultCard = () => {

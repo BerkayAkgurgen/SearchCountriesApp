@@ -15,6 +15,7 @@ import ErrorPage from "./components/error/ErrorPage";
 import Footer from "./components/footer/Footer";
 import { CountryProvider } from "./contextAPI/FormContext";
 import FavoriteBar from "./components/sidebar/Favorite";
+import LocalStorage from "./localstorage/LocalStorage";
 
 // const Navbar = React.lazy(() => import("./components/header/Navbar"));
 // const Footer = React.lazy(() => import("./components/footer/Footer"));
@@ -51,6 +52,7 @@ export function App() {
           <LazyLoad once>
             <Footer />
           </LazyLoad>
+          <LocalStorage />
         </>
       </Router>
     </CountryProvider>

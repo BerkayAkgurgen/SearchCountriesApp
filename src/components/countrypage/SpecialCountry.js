@@ -14,7 +14,7 @@ import { IoLanguage } from "react-icons/io5";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { CgShortcut } from "react-icons/cg";
 import axios from "axios";
-import ErrorPage from "../error/ErrorPage";
+import CountryNotFound from "../error/CountryNotFound";
 
 const SpecialCountry = () => {
   const [country, setCountry] = useState([]);
@@ -50,9 +50,9 @@ const SpecialCountry = () => {
           return (
             <Router>
               <LazyLoad>
-                <Route component={ErrorPage} />
+                <Route component={CountryNotFound} />
               </LazyLoad>
-              <Redirect to="/404" />
+              <Redirect to="/country/404" />
             </Router>
           );
         } else if (!error && !load) {
