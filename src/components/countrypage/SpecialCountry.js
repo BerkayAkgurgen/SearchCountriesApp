@@ -17,7 +17,7 @@ import axios from "axios";
 import CountryNotFound from "../error/CountryNotFound";
 
 const SpecialCountry = () => {
-  const [country, setCountry] = useState([]);
+  const [specCountry, setCountry] = useState([]);
   const [error, setError] = useState(false);
   const [load, setLoad] = useState(true);
   const { id } = useParams();
@@ -29,14 +29,14 @@ const SpecialCountry = () => {
   const fetchCountry = async () => {
     try {
       const response = await axios.get(
-        `https://restcountries.eu/rest/v2/alpha/${id}`
+        `https://restcountries.eu/rest/v2/alpha/${id}?fields=numericCode;name;flag;altSpellings;callingCodes;capital;population;languages;timezones;currencies;cioc;`
       );
       const country = response.data;
-      setCountry(country);
+      setCountry([country]);
       setError(false);
       setTimeout(() => {
         setLoad(false);
-      }, 300);
+      }, 100);
       setLoad(true);
     } catch (err) {
       setError(true);
@@ -58,77 +58,97 @@ const SpecialCountry = () => {
         } else if (!error && !load) {
           return (
             <section className="country-wrapper">
-              <div className="container country">
-                <h4 className="country__name">{country.name}</h4>
-                <div className="country__flag">
-                  <LazyLoad height={200} once>
-                    <img
-                      src={country.flag}
-                      alt="flag"
-                      width="100%"
-                      height="100%"
-                    />
-                  </LazyLoad>
-                </div>
-                <div className="country__infos">
-                  <ul className="infos__list">
-                    <li className="infos__list-item">
-                      <FaFlag />-<span className="empty">&nbsp;</span>
-                      <span title="Full Name" className="sub-info">
-                        {country.altSpellings?.[2]}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <FaPhoneAlt />-<span className="empty">&nbsp;</span>
-                      <span title="Calling Code" className="sub-info">
-                        {country.callingCodes?.[0]}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <HiLocationMarker />-<span className="empty">&nbsp;</span>
-                      <span title="Capital" className="sub-info">
-                        {country.capital}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <FaMapMarkedAlt />-<span className="empty">&nbsp;</span>
-                      <span title="Area" className="sub-info">
-                        {country.area} km2
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <BsFillPeopleFill />-<span className="empty">&nbsp;</span>
-                      <span title="Population" className="sub-info">
-                        {country.population}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <IoLanguage />-<span className="empty">&nbsp;</span>
-                      <span title="Languages" className="sub-info">
-                        {country.languages?.[0].name}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <BiTimeFive />-<span className="empty">&nbsp;</span>
-                      <span title="Time Zones" className="sub-info">
-                        {country.timezones?.[0]}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <FaMoneyBillWave />-<span className="empty">&nbsp;</span>
-                      <span title="Currencies" className="sub-info">
-                        {country.currencies?.[0].name}
-                      </span>
-                    </li>
-                    <li className="infos__list-item">
-                      <CgShortcut />-<span className="empty">&nbsp;</span>
-                      <span title="IOC Code" className="sub-info">
-                        {country.cioc}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              {specCountry.map((country) => {
+                return (
+                  <div key={country.numericCode} className="container country">
+                    <h4 className="country__name">{country.name}</h4>
+                    <div className="country__flag">
+                      <LazyLoad height={200} once>
+                        <img
+                          src={country.flag}
+                          alt="flag"
+                          width="100%"
+                          height="100%"
+                        />
+                      </LazyLoad>
+                    </div>
+                    <div className="country__infos">
+                      <ul className="infos__list">
+                        <li className="infos__list-item">
+                          <FaFlag />-<span className="empty">&nbsp;</span>
+                          <span title="Full Name" className="sub-info">
+                            {country.altSpellings?.[2]
+                              ? country.altSpellings?.[2]
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <FaPhoneAlt />-<span className="empty">&nbsp;</span>
+                          <span title="Calling Code" className="sub-info">
+                            {country.callingCodes?.[0]
+                              ? country.callingCodes?.[0]
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <HiLocationMarker />-
+                          <span className="empty">&nbsp;</span>
+                          <span title="Capital" className="sub-info">
+                            {country.capital ? country.capital : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <FaMapMarkedAlt />-
+                          <span className="empty">&nbsp;</span>
+                          <span title="Area" className="sub-info">
+                            {country.area ? `${country.area} km2` : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <BsFillPeopleFill />-
+                          <span className="empty">&nbsp;</span>
+                          <span title="Population" className="sub-info">
+                            {country.population
+                              ? country.population
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <IoLanguage />-<span className="empty">&nbsp;</span>
+                          <span title="Languages" className="sub-info">
+                            {country.languages?.[0].name
+                              ? country.languages?.[0].name
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <BiTimeFive />-<span className="empty">&nbsp;</span>
+                          <span title="Time Zones" className="sub-info">
+                            {country.timezones?.[0]
+                              ? country.timezones?.[0]
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <FaMoneyBillWave />-
+                          <span className="empty">&nbsp;</span>
+                          <span title="Currencies" className="sub-info">
+                            {country.currencies?.[0].name
+                              ? country.currencies?.[0].name
+                              : "Not Found"}
+                          </span>
+                        </li>
+                        <li className="infos__list-item">
+                          <CgShortcut />-<span className="empty">&nbsp;</span>
+                          <span title="IOC Code" className="sub-info">
+                            {country.cioc ? country.cioc : "Not Found"}
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                );
+              })}
             </section>
           );
         } else if (!error && load) {

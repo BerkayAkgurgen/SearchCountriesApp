@@ -33,14 +33,14 @@ const SearchForm = () => {
       switch (selected) {
         case "name":
           const responseName = await axios.get(
-            `https://restcountries.eu/rest/v2/name/${name}`
+            `https://restcountries.eu/rest/v2/name/${name}?fields=name;capital;region;alpha2Code;numericCode;flag;`
           );
           const countryName = responseName.data;
           dispatch({ type: "SEARCH_COUNTRY", payload: countryName });
           break;
         case "region":
           const responseRegion = await axios.get(
-            `https://restcountries.eu/rest/v2/region/${name}`
+            `https://restcountries.eu/rest/v2/region/${name}?fields=name;capital;region;alpha2Code;numericCode;flag;`
           );
           const countryRegion = responseRegion.data;
           dispatch({ type: "SEARCH_COUNTRY", payload: countryRegion });
