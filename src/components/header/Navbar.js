@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useContext,
-} from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import { SearchContext } from "../../contextAPI/FormContext";
@@ -49,7 +44,7 @@ const Navbar = () => {
                 <img
                   width="50px"
                   height="35px"
-                  src="/src/images/favicon&icon/favicon.png"
+                  src="https://www.linkpicture.com/q/favicon_19.png"
                   alt="icon"
                 />
               </LazyLoad>
@@ -64,26 +59,18 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav__list-item">
-                <a href="#form-section" className="brand__link">
-                  Go Search
-                </a>
-              </li>
-              <li className="nav__list-item">
                 <a onClick={sidebarHandler} className="brand__link">
                   Travel List
                 </a>
               </li>
               <li className="nav__list-item">
-                <Link
-                  to={{
-                    pathname:
-                      "https://github.com/BerkayAkgurgen/SearchCountriesApp",
-                  }}
+                <a
+                  href="https://github.com/BerkayAkgurgen/SearchCountriesApp"
                   target="_blank"
                   className="brand__link"
                 >
                   Visit on GitHub
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

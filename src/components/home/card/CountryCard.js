@@ -59,7 +59,7 @@ const CountryCards = () => {
                       once
                     >
                       <img
-                        width={windowWidth >= 614 ? "310px" : "100%"}
+                        width={windowWidth >= 614 ? "320px" : "100%"}
                         height={windowWidth >= 614 ? "210px" : '100%"'}
                         src={country.flag}
                         alt="flag"
@@ -74,9 +74,6 @@ const CountryCards = () => {
                       <span className="country-capital">
                         Capital: {country.capital}
                       </span>
-                      <span className="country-currencies">
-                        Currency: {country.currencies?.[0].name}
-                      </span>
                       <span className="country-region">
                         Region: {country.region}
                       </span>
@@ -85,7 +82,9 @@ const CountryCards = () => {
                   <a
                     target="_blank"
                     href={
-                      country.cioc === "" ? "/404" : `country/${country.cioc}`
+                      country.callingCodes?.[0] === ""
+                        ? "#/404"
+                        : `#/country/${country.alpha2Code}`
                     }
                   >
                     <footer className="card__footer">

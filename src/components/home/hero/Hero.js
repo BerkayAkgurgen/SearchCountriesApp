@@ -5,7 +5,7 @@ function Hero() {
     <section className="hero">
       <div
         style={{
-          backgroundImage: `url("./src/images/banner/blue-banner-minify.png")`,
+          backgroundImage: `url("https://www.linkpicture.com/q/blue-banner-minify.png")`,
         }}
         className="hero__bg-image"
       >

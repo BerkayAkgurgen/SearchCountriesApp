@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Redirect,
@@ -15,11 +15,10 @@ import { CountryProvider } from "./contextAPI/FormContext";
 import FavoriteBar from "./components/sidebar/Favorite";
 import LocalStorage from "./localstorage/LocalStorage";
 
-
 export function App() {
   return (
     <CountryProvider>
-      <Router>
+      <Router basename="/">
         <>
           <Navbar />
           <Switch>

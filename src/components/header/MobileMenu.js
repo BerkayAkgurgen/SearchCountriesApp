@@ -2,10 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Link } from "react-router-dom";
 import { SearchContext } from "../../contextAPI/FormContext";
 
-const MobileMenu = ({
-  active,
-  setActive,
-}) => {
+const MobileMenu = ({ active, setActive }) => {
   const { dispatch } = useContext(SearchContext);
 
   const toggleMenu = () => {
@@ -41,26 +38,18 @@ const MobileMenu = ({
             </Link>
           </li>
           <li className="mobile__list-item">
-            <a href="#form-section" className="menu-link">
-              Go Search
-            </a>
-          </li>
-          <li className="mobile__list-item">
             <a onClick={sidebarHandlerMobile} className="menu-link">
               Travel List
             </a>
           </li>
           <li className="mobile__list-item">
-            <Link
-              to={{
-                pathname:
-                  "https://github.com/BerkayAkgurgen/SearchCountriesApp",
-              }}
+            <a
+              href="https://github.com/BerkayAkgurgen/SearchCountriesApp"
               target="_blank"
               className="menu-link"
             >
               Visit on GitHub
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>

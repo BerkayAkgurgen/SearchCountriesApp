@@ -54,7 +54,11 @@ const DefaultCard = () => {
         <div className="dp-cards">
           {DefCountries.map((country) => {
             return (
-              <div key={country.numericCode} className="countries__card card" key={country.name}>
+              <div
+                key={country.numericCode}
+                className="countries__card card"
+                key={country.name}
+              >
                 <div className="card__flag">
                   <LazyLoad
                     height={windowWidth >= 614 ? "210px" : '173px"'}
@@ -76,15 +80,15 @@ const DefaultCard = () => {
                     <span className="country-capital">
                       Capital: {country.capital}
                     </span>
-                    <span className="country-currencies">
-                      Currency: {country.currency}
-                    </span>
                     <span className="country-region">
                       Region: {country.region}
                     </span>
                   </div>
                 </div>
-                <a target="_blank" href={`country/${country.cioc}`}>
+                <a
+                  target="_blank"
+                  href={`#/country/${country.cioc}`}
+                >
                   <footer className="card__footer">
                     <p>Go to detailed information.</p>
                   </footer>
