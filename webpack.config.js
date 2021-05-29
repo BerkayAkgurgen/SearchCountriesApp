@@ -13,7 +13,13 @@ module.exports = {
     port: 3010,
     watchContentBase: true,
   },
+  devtool: "cheap-source-map",
   entry: ["@babel/polyfill", "./src/index.js"],
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   module: {
     rules: [
       {
